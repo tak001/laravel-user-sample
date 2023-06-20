@@ -7,6 +7,29 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# init
+- .env.exampleをコピーして、.envファイルを作成
+- brew upgrede
+- (version指定があれば)brew install php@8.1
+- (version指定があれば)brew link --overwrite --force php@8.1
+- composer clear-cache
+- composer self-update
+- composer install
+- php artisan key:generate
+- php artisan migrate
+
+# docker
+- docker compose rm -s -f -v
+- docker compose up
+## MySQLコンテナ内での実行
+- docker ps
+  - laravel-user-sample-db-1のような名前を探す
+- docker exec -it <上記で探した名前> bash
+- mysql -h127.0.0.1 -uroot -ppassword
+- SHOW DATABASES;
+- exit
+- exit
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
