@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('/books', 'App\Http\Controllers\BookController');
 Route::apiResource('/roles', 'App\Http\Controllers\RoleController');
+Route::apiResource('/roles', 'App\Http\Controllers\AccountController');
