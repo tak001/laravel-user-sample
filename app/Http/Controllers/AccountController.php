@@ -12,26 +12,28 @@ class AccountController extends Controller
      */
     public function index()
     {
+        $accounts = Account::all();
         return response()->json([
             'message' => 'ok',
-            'data' => $books
+            'data' => $accounts
         ], 200, [], JSON_UNESCAPED_UNICODE);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
-        //
+        $account = Account::find($id);
+        if ($account) {
+            return response()->json([
+                'message' => 'ok',
+                'data' => $account
+            ], 200, [], JSON_UNESCAPED_UNICODE);
+        }
+        return response()->json([
+            'message' => 'Book not found',
+        ], 404);
     }
 
     /**
